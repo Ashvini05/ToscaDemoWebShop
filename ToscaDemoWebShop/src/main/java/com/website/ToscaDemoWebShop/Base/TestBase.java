@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
+import configuration.Configs;
+
 public class TestBase {
 	
 	protected static WebDriver driver;
@@ -13,10 +15,10 @@ public class TestBase {
 	@BeforeTest
 	public void initilization()
 	{
-		System.setProperty("webdriver.chrome.driver", "Drivers\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", Configs.driverPath);
 		driver = new ChromeDriver();
-		driver.get("http://demowebshop.tricentis.com/");
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.get(Configs.uri);
+		driver.manage().timeouts().implicitlyWait(Configs.timeOut,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
 	}
@@ -26,6 +28,7 @@ public class TestBase {
 	{
 		driver.close();
 	}
+	
 	
 
 }

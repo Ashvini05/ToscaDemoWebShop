@@ -17,7 +17,7 @@ import com.website.ToscaDemoWebShop.Pages.ShippingMethodCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShoppingCartPage;
 
 
-@Test
+
 public class Books extends TestBase 
 {
 	HomePage home = new HomePage();
@@ -33,7 +33,7 @@ public class Books extends TestBase
 	ConfirmOrderPage Confirmorder = new ConfirmOrderPage();
 	CheckOutPage checkOut = new CheckOutPage();
 	
-	
+	@Test
 	public void Orderbooks()
 	{
 		
