@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-02-07T05:55:31Z" name="Default suite" finished-at="2021-02-07T05:56:08Z" duration-ms="37458">
+    <groups>
+    </groups>
+    <test started-at="2021-02-07T05:55:31Z" name="Default test" finished-at="2021-02-07T05:56:08Z" duration-ms="37458">
+      <class name="com.website.ToscaDemoWebShop.Books">
+        <test-method is-config="true" signature="initilization()[pri:0, instance:com.website.ToscaDemoWebShop.Books@4167d97b]" started-at="2021-02-07T18:55:31Z" name="initilization" finished-at="2021-02-07T18:55:51Z" duration-ms="19930" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initilization -->
+        <test-method signature="Orderbooks()[pri:0, instance:com.website.ToscaDemoWebShop.Books@4167d97b]" started-at="2021-02-07T18:55:51Z" name="Orderbooks" finished-at="2021-02-07T18:56:08Z" duration-ms="17381" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Orderbooks -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.website.ToscaDemoWebShop.Books@4167d97b]" started-at="2021-02-07T18:56:08Z" name="closeBrowser" finished-at="2021-02-07T18:56:08Z" duration-ms="123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.website.ToscaDemoWebShop.Books -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
