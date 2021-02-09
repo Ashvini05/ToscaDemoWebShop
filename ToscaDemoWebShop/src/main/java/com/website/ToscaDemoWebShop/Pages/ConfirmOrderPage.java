@@ -5,12 +5,11 @@ import org.openqa.selenium.*;
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class ConfirmOrderPage  extends TestBase{
-	private String ConfirmOrder_ConfirmButton = "//input[@value='Confirm']";
-	
+	private By ConfirmOrder_ConfirmButton = By.xpath("//input[@value='Confirm']");
 	
 	public void clickOnConfirmButton()
 	{
-	    driver.findElement(By.xpath(ConfirmOrder_ConfirmButton)).click();
+	    driver.findElement(ConfirmOrder_ConfirmButton).click();
 
 	}
 	

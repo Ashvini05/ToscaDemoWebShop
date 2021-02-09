@@ -16,8 +16,6 @@ import com.website.ToscaDemoWebShop.Pages.ShippingAddressCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShippingMethodCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShoppingCartPage;
 
-
-
 public class Books extends TestBase 
 {
 	HomePage home = new HomePage();

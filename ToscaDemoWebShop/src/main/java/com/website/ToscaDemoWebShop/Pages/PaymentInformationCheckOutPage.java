@@ -5,12 +5,12 @@ import org.openqa.selenium.*;
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class PaymentInformationCheckOutPage extends TestBase {
-	private String paymentInformation_ContinueButton ="//input[@onclick='PaymentInfo.save()']";
+	private By paymentInformation_ContinueButton =By.xpath("//input[@onclick='PaymentInfo.save()']");
 	
 	
 	public void clickOnContinueButton()
 	{
-		driver.findElement(By.xpath(paymentInformation_ContinueButton)).click();
+		driver.findElement(paymentInformation_ContinueButton).click();
 	}
 	
 
