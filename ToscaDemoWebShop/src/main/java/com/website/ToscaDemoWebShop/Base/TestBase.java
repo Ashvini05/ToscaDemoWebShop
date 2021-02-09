@@ -10,20 +10,18 @@ import configuration.Configs;
 
 public class TestBase {
 	
-	protected static WebDriver driver;
+	public static WebDriver driver;
 	
-	@BeforeTest
-	public void initilization()
+	public WebDriver initilization()
 	{
 		System.setProperty("webdriver.chrome.driver", Configs.driverPath);
 		driver = new ChromeDriver();
 		driver.get(Configs.uri);
 		driver.manage().timeouts().implicitlyWait(Configs.timeOut,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-
+		return driver;
 	}
 	
-	@AfterTest
 	public void closeBrowser()
 	{
 		driver.close();
