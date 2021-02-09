@@ -13,6 +13,8 @@ public class RegisterPage extends TestBase {
 	private By confirmPasswordField =  By.name("ConfirmPassword");
 	private By registerButton =  By.name("register-button");
 	
+	
+	
 
 	
 	public void fillInformation()
