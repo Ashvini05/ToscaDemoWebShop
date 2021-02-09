@@ -5,17 +5,26 @@ import org.openqa.selenium.*;
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class RegisterPage extends TestBase {
+	private By genderField =  By.id("gender-female");
+	private By firstNameField =  By.name("FirstName");
+	private By lastNameField =  By.name("LastName");
+	private By EmailField =  By.name("Email");
+	private By PasswordField =  By.name("Password");
+	private By confirmPasswordField =  By.name("ConfirmPassword");
+	private By registerButton =  By.name("register-button");
+	
+
 	
 	public void fillInformation()
 	{
 
-	    driver.findElement(By.id("gender-female")).click();
-	    driver.findElement(By.name("FirstName")).sendKeys("test");
-		driver.findElement(By.name("LastName")).sendKeys("auto");
-		driver.findElement(By.name("Email")).sendKeys("sfaaashhv44raataw@gmail.com");
-		driver.findElement(By.name("Password")).sendKeys("password123");
-		driver.findElement(By.name("ConfirmPassword")).sendKeys("password123");
-		driver.findElement(By.name("register-button")).click();
+	    driver.findElement(genderField).click();
+	    driver.findElement(firstNameField).sendKeys("test");
+		driver.findElement(lastNameField).sendKeys("auto");
+		driver.findElement(EmailField).sendKeys("sfaaashhv44raataw@gmail.com");
+		driver.findElement( PasswordField).sendKeys("password123");
+		driver.findElement( confirmPasswordField).sendKeys("password123");
+		driver.findElement(registerButton).click();
 	}
 	
 	public void logOut()

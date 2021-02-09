@@ -5,6 +5,7 @@
     <classes>
       <class name="com.website.ToscaDemoWebShop.Books">
         <methods>
+          <include name="closeBrowser"/>
           <include name="initilization"/>
           <include name="Orderbooks"/>
         </methods>

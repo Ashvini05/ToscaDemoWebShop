@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class CheckOutPage extends TestBase {
+	private By orderDetailsLink= By.xpath(" //a[contains(@href,'/orderdetails/')]\"");
 	 
 	public void clickOnOrderDetailsLink()
 	{
-		driver.findElement(By.xpath( " //a[contains(@href,'/orderdetails/')]")).click();
-	}
+		driver.findElement(orderDetailsLink).click();	}
 
 }

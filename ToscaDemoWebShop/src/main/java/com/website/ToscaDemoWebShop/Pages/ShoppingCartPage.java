@@ -7,6 +7,7 @@ import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class ShoppingCartPage extends TestBase {
 	
+	
 	public void shoppingCartFillInformation()
 	{
 		 Select contrydropdown = new Select(driver.findElement(By.id("CountryId")));

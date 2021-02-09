@@ -6,43 +6,43 @@ import org.openqa.selenium.support.ui.Select;
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class BookAddressCheckOutPage  extends TestBase {
-	private String billingAddress_FirstName = "BillingNewAddress_FirstName";
-	private String billingAddress_LastName = "BillingNewAddress_LastName";
-	private String billingAddress_Email = "BillingNewAddress_Email";
-	private String billingAddress_Company = "BillingNewAddress_Company";
-	private String billingAddress_CountryId = "BillingNewAddress_CountryId";
-    private String billingAddress_StateProvinceId = "BillingNewAddress_StateProvinceId";
-    private String billingAddress_City = "BillingNewAddress_City";
-    private String billingAddress_Address1 = "BillingNewAddress_Address1";
-    private String billingAddress_Address2 = "BillingNewAddress_Address2";
-    private String billingAddress_ZipPostalCode = "BillingNewAddress_ZipPostalCode";
-    private String billingAddress_PhoneNumber= "//input[@id='BillingNewAddress_PhoneNumber']";
-    private String billingAddress_FaxNumber= "BillingNewAddress_FaxNumber";
-    private String billingAddress_ContinueButton = "//div[@id='billing-buttons-container']/input[@title='Continue']";
+	private By billingAddress_FirstName = By.id("BillingNewAddress_FirstName");
+	private By billingAddress_LastName = By.id("BillingNewAddress_LastName");
+	private By billingAddress_Email = By.id("BillingNewAddress_Email");
+	private By billingAddress_Company = By.id("BillingNewAddress_Company");
+	private By billingAddress_CountryId =By.id("BillingNewAddress_CountryId");
+    private By billingAddress_StateProvinceId = By.id("BillingNewAddress_StateProvinceId");
+    private By billingAddress_City = By.id("BillingNewAddress_City");
+    private By billingAddress_Address1 = By.id("BillingNewAddress_Address1");
+    private By billingAddress_Address2 = By.id("BillingNewAddress_Address2");
+    private By billingAddress_ZipPostalCode = By.id("BillingNewAddress_ZipPostalCode");
+    private By billingAddress_PhoneNumber= By.xpath("//input[@id='BillingNewAddress_PhoneNumber']");
+    private By billingAddress_FaxNumber= By.id("BillingNewAddress_FaxNumber");
+    private By billingAddress_ContinueButton =By.xpath("//div[@id='billing-buttons-container']/input[@title='Continue']");
 
 	public void billingAddress() {
 		// TODO Auto-generated method stub
-	    driver.findElement(By.id(billingAddress_FirstName)).sendKeys("xyz");
-	    driver.findElement(By.id(billingAddress_LastName)).sendKeys("aaak");
-	    driver.findElement(By.id(billingAddress_Email)).sendKeys("aggaa563@gmail.com");
-	    driver.findElement(By.id(billingAddress_Company)).sendKeys("Tata motors");
+	    driver.findElement(billingAddress_FirstName).sendKeys("xyz");
+	    driver.findElement(billingAddress_LastName).sendKeys("aaak");
+	    driver.findElement(billingAddress_Email).sendKeys("aggaa563@gmail.com");
+	    driver.findElement(billingAddress_Company).sendKeys("Tata motors");
 	   
-	    Select contrydropdown1 = new Select(driver.findElement(By.id(billingAddress_CountryId)));
+	    Select contrydropdown1 = new Select(driver.findElement(billingAddress_CountryId));
 	    contrydropdown1.selectByVisibleText("New Zealand");
-	    Select statedropdown1 = new Select(driver.findElement(By.id(billingAddress_StateProvinceId)));
+	    Select statedropdown1 = new Select(driver.findElement(billingAddress_StateProvinceId));
 	    statedropdown1.selectByVisibleText("Other (Non US)");
 	    
-	    driver.findElement(By.id(billingAddress_City)).sendKeys("Solapur");
-	    driver.findElement(By.id(billingAddress_Address1)).sendKeys("Xyz street Solapur India");
-	    driver.findElement(By.id(billingAddress_Address2)).sendKeys("zzz street Solapur India");
-	    driver.findElement(By.id(billingAddress_ZipPostalCode)).sendKeys("21991");
-	    driver.findElement(By.xpath(billingAddress_PhoneNumber)).sendKeys("9970815987");
-	    driver.findElement(By.id(billingAddress_FaxNumber)).sendKeys("8882222");
+	    driver.findElement(billingAddress_City).sendKeys("Solapur");
+	    driver.findElement(billingAddress_Address1).sendKeys("Xyz street Solapur India");
+	    driver.findElement(billingAddress_Address2).sendKeys("zzz street Solapur India");
+	    driver.findElement(billingAddress_ZipPostalCode).sendKeys("21991");
+	    driver.findElement(billingAddress_PhoneNumber).sendKeys("9970815987");
+	    driver.findElement(billingAddress_FaxNumber).sendKeys("8882222");
 	} 
 	    
 	 public void clickOnContinueButton() {
 	  
-	    driver.findElement(By.xpath(billingAddress_ContinueButton)).click();
+	    driver.findElement(billingAddress_ContinueButton).click();
 	}
 
 }
