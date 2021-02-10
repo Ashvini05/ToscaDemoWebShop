@@ -18,6 +18,7 @@ import com.website.ToscaDemoWebShop.Pages.ShippingAddressCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShippingMethodCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShoppingCartPage;
 
+@Test
 public class Books 
 {
 	HomePage home;
@@ -40,7 +41,7 @@ public class Books
 		driver = testBase.initilization();
 		home = new HomePage();
 		books = new BooksPage();
-		book1 = new BooksInformationPage();
+		book1 = new BooksInformationPage(driver);
 		shoppingcart = new ShoppingCartPage();
 		login = new LoginPage();
 		bookAddresscheckout = new BookAddressCheckOutPages(driver);
@@ -53,7 +54,6 @@ public class Books
 	}
 	
 	
-	@Test
 	public void Orderbooks()
 	{
 		
@@ -64,9 +64,17 @@ public class Books
 		home.clickOnShoppingCartLink();
 		shoppingcart.shoppingCartFillInformation();
 		login.clickOnCheckAsGuest();
-		bookAddresscheckout.enterFirstName("Ashwini");
-		bookAddresscheckout.billingAddress();
-		bookAddresscheckout.clickOnContinueButton();
+		bookAddresscheckout.enterFirstName("ssssi");
+		bookAddresscheckout.enterLastName("yyaa");
+		bookAddresscheckout.enterEmail("aggaa563@gmail.com");
+		bookAddresscheckout.enterCompany("Tata motors");
+		bookAddresscheckout.enterCity("Solapur");
+		bookAddresscheckout.enterAddress1("Xyz street Solapur India");
+		bookAddresscheckout.enterAddress2("zzz street Solapur India");
+		bookAddresscheckout.enterZipPostalCode("21991");
+		bookAddresscheckout.enterPhoneNumber("9970815987");
+		bookAddresscheckout.enterFaxNumber("8882222");
+	    bookAddresscheckout.clickOnContinueButton();
 		ShippingCheckOut.clickOnContinueButton();
 		ShippingMethodCheckOut.selectGroundRadioButton();
 		ShippingMethodCheckOut.clickOnContinueButton();
@@ -75,6 +83,7 @@ public class Books
 		PaymentInformationCheckOut.clickOnContinueButton();
 		Confirmorder.clickOnConfirmButton();
 		checkOut.clickOnOrderDetailsLink();
+		
 	
 		
 		

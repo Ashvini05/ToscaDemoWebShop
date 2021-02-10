@@ -3,16 +3,29 @@ package com.website.ToscaDemoWebShop.Pages;
 import java.util.Random;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
 
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
 public class BooksPage extends TestBase {
-	private By book_ComputingAndInternet =By.xpath("//h2[@class='product-title']//a[@href='/computing-and-internet']");
-	private By book_Fiction = By.xpath("//h2[@class='product-title']//a[@href='/fiction']");
-	private By book_CopyOfComputingAndInternet =By.xpath("//h2[@class='product-title']//a[@href='/copy-of-computing-and-internet']");
-	private By book_FictionEx = By.xpath("//h2[@class='product-title']//a[@href='/fiction-ex']");
-	private By book_Health = By.xpath("//h2[@class='product-title']//a[@href='/health']");
-	private By book_Science =By.xpath("//h2[@class='product-title']//a[@href='/science']");
+	private WebDriver driver;
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/computing-and-internet']")
+	private WebElement book_ComputingAndInternet;
+	
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/fiction']")
+	private WebElement book_Fiction;
+	
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/copy-of-computing-and-internet']")
+	private WebElement book_CopyOfComputingAndInternet;
+	
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/fiction-ex']")
+	private WebElement book_FictionEx;
+	
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/health']")
+	private WebElement book_Health;
+	
+	@FindBy(xpath="//h2[@class='product-title']//a[@href='/science']")
+	private WebElement book_Science;
 	
 	
 	public void selectRandomBook()
@@ -21,23 +34,23 @@ public class BooksPage extends TestBase {
 		int randvalue = rand.nextInt(6);
 		switch (1) {
 		case 1:
-			driver.findElement(book_ComputingAndInternet).click();
+			book_ComputingAndInternet.click();
 			break;
 		case 2:
-			driver.findElement(book_Fiction).click();
+			book_Fiction.click();
 			break;
 		case 3:
-			driver.findElement(book_CopyOfComputingAndInternet).click();
+			book_CopyOfComputingAndInternet.click();
 			break;
 		case 4:
-			driver.findElement(book_FictionEx).click();
+			book_FictionEx.click();
 			break;
 		case 5:
-			driver.findElement(book_Health).click();
+			book_Health.click();
 			break;
 		
 		default:
-			driver.findElement(book_Science).click();
+			book_Science.click();
 			break;
 		}
 

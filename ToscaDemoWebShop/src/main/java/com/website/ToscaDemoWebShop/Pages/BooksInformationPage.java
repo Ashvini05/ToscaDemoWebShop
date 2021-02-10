@@ -1,14 +1,24 @@
 package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
-
-public class BooksInformationPage extends TestBase {
-	private By addToCartButton=By.xpath("//*[contains(@id,'add-to-cart-button')]");
+public class BooksInformationPage  {
+	private WebDriver driver;
+	
+	@FindBy(xpath= "//*[contains(@id,'add-to-cart-button')]")
+	private WebElement addToCartButton;
+	
 	
 	public void ClickOnAddToCartButton()
 	{
-	driver.findElement(addToCartButton).click();
+	addToCartButton.click();
 	}
+	
+
+	 public BooksInformationPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
 }

@@ -1,14 +1,30 @@
 package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
 
-public class CheckOutPage extends TestBase {
-	private By orderDetailsLink= By.xpath(" //a[contains(@href,'/orderdetails/')]\"");
+
+public class CheckOutPage  {
+	private WebDriver driver;
+
+	@FindBy (xpath= " //a[contains(@href,'/orderdetails/')]\"")
+	
+	private WebElement orderDetailsLink;
+	
 	 
 	public void clickOnOrderDetailsLink()
 	{
-		driver.findElement(orderDetailsLink).click();	}
+		orderDetailsLink.click();	
+	}
+	
+	 public CheckOutPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+}
 
 }
