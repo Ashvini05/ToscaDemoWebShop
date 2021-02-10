@@ -4,11 +4,13 @@ import java.util.Random;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.website.ToscaDemoWebShop.Base.TestBase;
 
-public class BooksPage extends TestBase {
+public class BooksPage{
 	private WebDriver driver;
+	
 	@FindBy(xpath="//h2[@class='product-title']//a[@href='/computing-and-internet']")
 	private WebElement book_ComputingAndInternet;
 	
@@ -28,11 +30,12 @@ public class BooksPage extends TestBase {
 	private WebElement book_Science;
 	
 	
+	
 	public void selectRandomBook()
 	{
 		Random rand = new Random();
 		int randvalue = rand.nextInt(6);
-		switch (1) {
+		switch (randvalue) {
 		case 1:
 			book_ComputingAndInternet.click();
 			break;
@@ -55,6 +58,11 @@ public class BooksPage extends TestBase {
 		}
 
 	}
+	
+	public BooksPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
 	
 
 }

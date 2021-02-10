@@ -1,5 +1,6 @@
 package com.website.ToscaDemoWebShop;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -40,7 +41,7 @@ public class Books
 	public void setup() {
 		driver = testBase.initilization();
 		home = new HomePage();
-		books = new BooksPage();
+		books = new BooksPage(driver);
 		book1 = new BooksInformationPage(driver);
 		shoppingcart = new ShoppingCartPage();
 		login = new LoginPage();
@@ -50,14 +51,12 @@ public class Books
 		PaymentMethodCheckOut = new PaymentMethodCheckOutPage();
 		PaymentInformationCheckOut= new PaymentInformationCheckOutPage();
 		Confirmorder = new ConfirmOrderPage();
-		checkOut = new CheckOutPage();
+		checkOut = new CheckOutPage(driver);
 	}
 	
 	
 	public void Orderbooks()
 	{
-		
-		
 		home.clickOnBookLink();
 		books.selectRandomBook();
 		book1.ClickOnAddToCartButton();
@@ -83,12 +82,6 @@ public class Books
 		PaymentInformationCheckOut.clickOnContinueButton();
 		Confirmorder.clickOnConfirmButton();
 		checkOut.clickOnOrderDetailsLink();
-		
-	
-		
-		
-		
-		
 	}
 	
 

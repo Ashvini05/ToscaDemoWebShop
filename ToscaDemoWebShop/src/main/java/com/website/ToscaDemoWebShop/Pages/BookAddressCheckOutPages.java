@@ -74,12 +74,14 @@ public class BookAddressCheckOutPages {
     
     public void selectCountry(String country)
     {
-      billingAddress_CountryId).selectByVisibleText(country);
+    	Select sel = new Select(billingAddress_CountryId);
+    	sel.selectByVisibleText(country);
     }
     
     public void selectState(String state)
     {
-    	billingAddress_StateProvinceId.
+    	Select sel = new Select(billingAddress_StateProvinceId);
+    	sel.selectByVisibleText(state);
     }
     
     public void enterCity(String city)
@@ -111,11 +113,6 @@ public class BookAddressCheckOutPages {
     {
     	billingAddress_FaxNumber.sendKeys(faxNumber);
     }
-  
-       Select contrydropdown1 = new Select(billingAddress_CountryId);
-	    contrydropdown1.selectByVisibleText("New Zealand");
-	    Select statedropdown1 = new Select(driver.findElement(billingAddress_StateProvinceId));
-	    statedropdown1.selectByVisibleText("Other (Non US)");
 	    
 	 public void clickOnContinueButton() {
 	  
