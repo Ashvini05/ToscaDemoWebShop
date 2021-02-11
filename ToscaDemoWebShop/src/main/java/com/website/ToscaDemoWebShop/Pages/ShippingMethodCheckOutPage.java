@@ -1,22 +1,36 @@
 package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
 
-public class ShippingMethodCheckOutPage extends TestBase {
-	private By shippingMethod_GroundRadioButton = By.xpath("//input[@id='shippingoption_0']");
-	private By shippingMethod_continueButton = By.xpath("//input[@onclick='ShippingMethod.save()']");
+
+public class ShippingMethodCheckOutPage  {
+	private WebDriver driver;
+	
+	 public ShippingMethodCheckOutPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
+
+	
+	@FindBy(xpath= "//input[@id='shippingoption_0']")
+	private WebElement shippingMethod_GroundRadioButton;
+	
+	@FindBy(xpath= "//input[@onclick='ShippingMethod.save()']")
+	private WebElement shippingMethod_continueButton;
+	
 	
 	public void selectGroundRadioButton()
 	{
-		driver.findElement(shippingMethod_GroundRadioButton).click();
+		shippingMethod_GroundRadioButton.click();
 
 		
 	}
 	public void clickOnContinueButton()
 	{
-	    driver.findElement(shippingMethod_continueButton).click();
+	    shippingMethod_continueButton.click();
 
 	}
 

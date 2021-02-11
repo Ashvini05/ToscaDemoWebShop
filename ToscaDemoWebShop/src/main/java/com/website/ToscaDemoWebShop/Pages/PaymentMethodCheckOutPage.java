@@ -1,23 +1,33 @@
 package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
-
-public class PaymentMethodCheckOutPage extends TestBase {
-	private By paymentMethod_cashOnDelivery=By.xpath("//input[@id='paymentmethod_0']");
-	private By paymentMethod_ContinueBtn=By.xpath("//input[@onclick='PaymentMethod.save()']");
-	
+public class PaymentMethodCheckOutPage  {
+	  private WebDriver driver;
+		
+	@FindBy(xpath = "//input[@id='paymentmethod_0']")
+	private WebElement paymentMethod_cashOnDelivery;
+		
+	@FindBy(xpath = "//input[@onclick='PaymentMethod.save()']")
+	private WebElement paymentMethod_ContinueBtn;
+		
 
 	public void selectPaymentMethod()
 	{
-	    driver.findElement(paymentMethod_cashOnDelivery).click();
+	    paymentMethod_cashOnDelivery.click();
 	    
 	}
 	public void clikOnContinueBtn()
 	{
-		driver.findElement(paymentMethod_ContinueBtn).click();
+		paymentMethod_ContinueBtn.click();
 	}
+	public PaymentMethodCheckOutPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
+	
 	
 
 }

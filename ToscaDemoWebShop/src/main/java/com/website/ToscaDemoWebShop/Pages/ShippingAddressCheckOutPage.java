@@ -1,15 +1,27 @@
 package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
 
-public class ShippingAddressCheckOutPage extends TestBase{
- private By shippingAddress_continueButton = By.xpath("//input[@class='button-1 new-address-next-step-button' and @onclick='Shipping.save()'] ");
 
-	public void clickOnContinueButton()
+public class ShippingAddressCheckOutPage{
+	
+	private WebDriver driver;
+	
+	 public ShippingAddressCheckOutPage(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
+
+	
+	@FindBy(xpath= "//div [@id='shipping-buttons-container']//input[@ class ='button-1 new-address-next-step-button' ]")
+	private WebElement shippingAddress_continueButton;
+	
+    public void clickOnContinueButton()
 	{
-		driver.findElement(shippingAddress_continueButton).click();
+		shippingAddress_continueButton.click();
 		
 	    
 

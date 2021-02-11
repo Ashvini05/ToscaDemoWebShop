@@ -8,7 +8,7 @@ import com.website.ToscaDemoWebShop.Pages.RegisterPage;
 
 public class RegisterNewUser extends TestBase{
 	
-	HomePage home = new HomePage();
+	HomePage home = new HomePage(null);
 	RegisterPage register = new RegisterPage();
 	
 	@Test

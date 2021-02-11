@@ -5,10 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
-
 public class BookAddressCheckOutPages {
 	private WebDriver driver;
+	
+	 public BookAddressCheckOutPages(WebDriver driver) {
+		 this.driver = driver;
+		PageFactory.initElements(driver, this);
+	 }
+
 	
 	@FindBy(id = "BillingNewAddress_FirstName")
 	private WebElement billingAddress_FirstName;
@@ -119,10 +123,7 @@ public class BookAddressCheckOutPages {
 	   billingAddress_ContinueButton.click();
 	}
 	 
-	 public BookAddressCheckOutPages(WebDriver driver) {
-		 this.driver = driver;
-		PageFactory.initElements(driver, this);
-	 }
+	
 
 }
 

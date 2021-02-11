@@ -2,6 +2,7 @@ package com.website.ToscaDemoWebShop;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -40,34 +41,37 @@ public class Books
 	@BeforeTest
 	public void setup() {
 		driver = testBase.initilization();
-		home = new HomePage();
+		home = new HomePage(driver);
 		books = new BooksPage(driver);
 		book1 = new BooksInformationPage(driver);
-		shoppingcart = new ShoppingCartPage();
-		login = new LoginPage();
+		shoppingcart = new ShoppingCartPage(driver);
+		login = new LoginPage(driver);
 		bookAddresscheckout = new BookAddressCheckOutPages(driver);
-		ShippingCheckOut= new ShippingAddressCheckOutPage();
-		ShippingMethodCheckOut= new ShippingMethodCheckOutPage();
-		PaymentMethodCheckOut = new PaymentMethodCheckOutPage();
-		PaymentInformationCheckOut= new PaymentInformationCheckOutPage();
-		Confirmorder = new ConfirmOrderPage();
+		ShippingCheckOut= new ShippingAddressCheckOutPage(driver);
+		ShippingMethodCheckOut= new ShippingMethodCheckOutPage(driver);
+		PaymentMethodCheckOut = new PaymentMethodCheckOutPage(driver);
+		PaymentInformationCheckOut= new PaymentInformationCheckOutPage(driver);
+		Confirmorder = new ConfirmOrderPage(driver);
 		checkOut = new CheckOutPage(driver);
 	}
 	
-	
+	@Test
 	public void Orderbooks()
 	{
 		home.clickOnBookLink();
 		books.selectRandomBook();
 		book1.ClickOnAddToCartButton();
 		home.clickOnShoppingCartLink();
-		shoppingcart.shoppingCartFillInformation();
+		shoppingcart.selectCountry("India");
+		shoppingcart.selectCheckbox();
+		shoppingcart.clickOnCheckOutButton();
 		login.clickOnCheckAsGuest();
 		bookAddresscheckout.enterFirstName("ssssi");
 		bookAddresscheckout.enterLastName("yyaa");
 		bookAddresscheckout.enterEmail("aggaa563@gmail.com");
 		bookAddresscheckout.enterCompany("Tata motors");
-		bookAddresscheckout.enterCity("Solapur");
+		bookAddresscheckout.selectCountry("India");
+	    bookAddresscheckout.enterCity("Solapur");
 		bookAddresscheckout.enterAddress1("Xyz street Solapur India");
 		bookAddresscheckout.enterAddress2("zzz street Solapur India");
 		bookAddresscheckout.enterZipPostalCode("21991");
@@ -82,6 +86,11 @@ public class Books
 		PaymentInformationCheckOut.clickOnContinueButton();
 		Confirmorder.clickOnConfirmButton();
 		checkOut.clickOnOrderDetailsLink();
+	}
+	@AfterTest
+	public void terminate()
+	{
+		driver.close();
 	}
 	
 

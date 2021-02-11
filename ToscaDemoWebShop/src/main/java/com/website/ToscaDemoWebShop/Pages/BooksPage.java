@@ -6,7 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.website.ToscaDemoWebShop.Base.TestBase;
+
 
 public class BooksPage{
 	private WebDriver driver;
@@ -35,7 +35,7 @@ public class BooksPage{
 	{
 		Random rand = new Random();
 		int randvalue = rand.nextInt(6);
-		switch (randvalue) {
+		switch (1) {
 		case 1:
 			book_ComputingAndInternet.click();
 			break;
