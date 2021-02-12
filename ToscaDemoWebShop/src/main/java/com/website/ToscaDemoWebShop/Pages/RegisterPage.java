@@ -2,12 +2,20 @@ package com.website.ToscaDemoWebShop.Pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 
 public class RegisterPage {
 	
 private WebDriver driver;
+
+
+public RegisterPage(WebDriver driver) {
+	 this.driver = driver;
+	PageFactory.initElements(driver, this);
+}
+
 	
 	@FindBy(id ="gender-female")
 	private WebElement genderField;
@@ -33,17 +41,44 @@ private WebDriver driver;
     
     
 	
-	public void fillInformation()
+	public void selectGender(String gender)
+	{
+		genderField.click();
+	}
+	public void firstName(String fname)
 	{
 
-	    genderField.click();
-	    firstNameField.sendKeys("test");
-		lastNameField.sendKeys("auto");
-		EmailField.sendKeys("sfaaashhv44raataw@gmail.com");
-	    PasswordField.sendKeys("password123");
-		confirmPasswordField.sendKeys("password123");
+	    firstNameField.sendKeys(fname);
+	  
+	}   
+	public void lastName(String lname)
+	{
+		lastNameField.sendKeys(lname);
+	  
+	}      
+	    
+	public void email(String eID)
+	{
+		EmailField.sendKeys(eID);
+	  
+	}      
+	public void password(String validPassword)
+	{
+		PasswordField.sendKeys(validPassword);
+	  
+	}      
+	public void confirm(String cPassword)
+	{
+		confirmPasswordField.sendKeys(cPassword);
+	  
+	}      
+	public void clickOnRegisterButton()
+	{
 		registerButton.click();
-	}
+	  
+	}                 
+
+		
 	
 	public void logOut()
 	{

@@ -3,13 +3,11 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.website.ToscaDemoWebShop.Books">
+      <class name="com.website.ToscaDemoWebShop.RegisterNewUser">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="initilization"/>
-          <include name="Orderbooks"/>
+          <include name="registerUser"/>
         </methods>
-      </class> <!-- com.website.ToscaDemoWebShop.Books -->
+      </class> <!-- com.website.ToscaDemoWebShop.RegisterNewUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

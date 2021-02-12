@@ -39,6 +39,7 @@ public class Books
 	private WebDriver driver;
 	
 	@BeforeTest
+	
 	public void setup() {
 		driver = testBase.initilization();
 		home = new HomePage(driver);

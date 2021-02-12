@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CheckOutPage  {
 	private WebDriver driver;
 
-	@FindBy (xpath= " //a[contains(@href,'/orderdetails/')]\"")
+	@FindBy (xpath= " //a[contains(@href,'/orderdetails/')]")
 	private WebElement orderDetailsLink;
 	
 	 
