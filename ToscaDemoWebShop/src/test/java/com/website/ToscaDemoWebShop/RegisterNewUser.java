@@ -1,31 +1,41 @@
+
 package com.website.ToscaDemoWebShop;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.website.ToscaDemoWebShop.Base.TestBase;
 import com.website.ToscaDemoWebShop.Pages.HomePage;
 import com.website.ToscaDemoWebShop.Pages.RegisterPage;
 
-@Test
-public class RegisterNewUser extends TestBase{
+public class RegisterNewUser{
+	private WebDriver driver;
+	TestBase testBase = new TestBase();
+	HomePage home;
+	RegisterPage register;
+			
+   @BeforeTest
+   public void setup() {
+	driver = testBase.initilization();
+	home = new HomePage(driver);
+	register = new RegisterPage(driver);
+   }	
 	
-	HomePage home = new HomePage(null);
-	RegisterPage register = new RegisterPage(null);
 	
-	public void registerUser() throws InterruptedException
+	@Test
+	public void registerUser()
 	{
 		home.clickOnRegisterLink();
-		register.genderRadioButton("Female");
-		register.firstName("Test");
-		register.lastName("Auto");
-		register.email("sfaaashhv44raataw@gmail.com");
-		register.password("password123");
-		register.confirm("password123");
+		register.selectGender("Female");
+		register.enterFirstName("Test");
+		register.enterLastName("Auto");
+		register.enterEmialID("sfaaashhv44ra5ataw@gmail.com");
+		register.enterPassword("password123");
+		register.enterConfirmPassword("password123");
 		register.clickOnRegisterButton();
 		register.logOut();
-		
-		
-		
+	
 	}
 	
 

@@ -3,6 +3,7 @@ package com.website.ToscaDemoWebShop.Pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 
 
@@ -26,18 +27,21 @@ public RegisterPage(WebDriver driver) {
 	@FindBy(name = "LastName" )
 	private WebElement lastNameField;
 	
-	@FindBy(xpath = "Email")
+	@FindBy(name = "Email")
 	private WebElement EmailField;
 	
-	@FindBy(xpath = "Password" )
+	@FindBy(name = "Password" )
 	private WebElement PasswordField;
 	
 	
-    @FindBy(xpath = "ConfirmPassword" )
+    @FindBy(name = "ConfirmPassword" )
 	private WebElement confirmPasswordField;
 	
-    @FindBy(xpath = "register-button" )
+    @FindBy(name = "register-button" )
 	private WebElement registerButton;
+    
+    @FindBy(xpath="//div[@class='result']")
+    private WebElement registrationResult;
     
     
 	
@@ -45,31 +49,31 @@ public RegisterPage(WebDriver driver) {
 	{
 		genderField.click();
 	}
-	public void firstName(String fname)
+	public void enterFirstName(String fname)
 	{
 
 	    firstNameField.sendKeys(fname);
 	  
 	}   
-	public void lastName(String lname)
+	public void enterLastName(String lname)
 	{
 		lastNameField.sendKeys(lname);
 	  
 	}      
 	    
-	public void email(String eID)
+	public void enterEmialID(String eID)
 	{
 		EmailField.sendKeys(eID);
 	  
 	}      
-	public void password(String validPassword)
+	public void enterPassword(String Password)
 	{
-		PasswordField.sendKeys(validPassword);
+		PasswordField.sendKeys(Password);
 	  
 	}      
-	public void confirm(String cPassword)
+	public void enterConfirmPassword(String confirmPassword)
 	{
-		confirmPasswordField.sendKeys(cPassword);
+		confirmPasswordField.sendKeys(confirmPassword);
 	  
 	}      
 	public void clickOnRegisterButton()
@@ -82,7 +86,8 @@ public RegisterPage(WebDriver driver) {
 	
 	public void logOut()
 	{
-		driver.findElement(By.cssSelector("body > div.master-wrapper-page > div.master-wrapper-content > div.master-wrapper-main > div.center-2 > div > div.page-body > div.buttons > input")).click();
+		Assert.assertEquals(registrationResult.getText(), "Your registration completed", "Registration failed with error message");
+		driver.findElement(By.xpath("//input[@value='Continue']")).click();
 		driver.findElement(By.xpath("//div//a[text()='Log out']")).click();
 		
 	}
