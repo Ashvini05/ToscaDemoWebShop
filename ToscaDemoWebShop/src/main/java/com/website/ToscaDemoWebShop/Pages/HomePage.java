@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 
 
@@ -20,6 +21,9 @@ public class HomePage {
 	@FindBy( xpath = "//div [@class='header-menu']/ul[@class='top-menu']/li/a[@href='/books']" )
 	private WebElement bookLink;
 	
+	@FindBy(xpath = "//div [@class='header-menu']/ul[@class='top-menu']/li/a[@href='/computers']")
+	private WebElement computerLink;
+		
 	@FindBy( xpath = "//a[@href='/cart']//span[@class='cart-label']" )
 	private WebElement shoppingCartLink;
 	
@@ -27,14 +31,16 @@ public class HomePage {
 	public void clickOnRegisterLink()
 	{
 		registerLink.click();
-		
-		
 	}
 	
 	public void clickOnBookLink()
 	{
 		bookLink.click();
 
+	}
+	public void clickOnComputerLink()
+	{
+		computerLink.click();
 	}
 	public void clickOnShoppingCartLink()
 	{
@@ -44,6 +50,6 @@ public class HomePage {
 	 public HomePage(WebDriver driver) {
 		 this.driver = driver;
 		PageFactory.initElements(driver, this);
-
+		
 	 }
 }
