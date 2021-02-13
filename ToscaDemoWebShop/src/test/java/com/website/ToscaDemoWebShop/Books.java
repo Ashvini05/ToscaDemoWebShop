@@ -20,7 +20,6 @@ import com.website.ToscaDemoWebShop.Pages.ShippingAddressCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShippingMethodCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ShoppingCartPage;
 
-@Test
 public class Books 
 {
 	HomePage home;
@@ -39,7 +38,6 @@ public class Books
 	private WebDriver driver;
 	
 	@BeforeTest
-	
 	public void setup() {
 		driver = testBase.initilization();
 		home = new HomePage(driver);
@@ -59,6 +57,25 @@ public class Books
 	@Test
 	public void Orderbooks()
 	{
+		/*
+		 * Open Webpage
+		 * Click on Books Link
+		 * Select a xyz book
+		 * click on add to cart button
+		 * click on shopping cart button
+		 * provide the billing details
+		 * then do something else
+		 * check something is happend
+		 */
+		
+		
+		/*
+		 * BDD - Behaviour driven development
+		 * Scenarios
+		 * The Page is opened
+		 * click on something
+		 * something should happen.
+		 */
 		home.clickOnBookLink();
 		books.selectRandomBook();
 		book1.ClickOnAddToCartButton();

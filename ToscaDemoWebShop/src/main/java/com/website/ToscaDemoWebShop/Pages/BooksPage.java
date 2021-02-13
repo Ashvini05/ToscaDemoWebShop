@@ -30,6 +30,10 @@ public class BooksPage{
 	private WebElement book_Science;
 	
 	
+	public void getAttributeScience(String attrName) {
+		book_Science.getAttribute(attrName);
+		book_Science.getText();
+	}
 	
 	public void selectRandomBook()
 	{

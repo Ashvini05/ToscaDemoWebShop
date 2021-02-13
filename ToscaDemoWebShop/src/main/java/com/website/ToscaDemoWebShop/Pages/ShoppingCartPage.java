@@ -47,8 +47,8 @@ public class ShoppingCartPage {
 	    {
 	    	
 	    	shippingCart_checkOutButton.click();
-	
-	
 	}
 
+	  //staleElement Exception - WebDriver Wait, refresh page, exception handling
+	  //ElementClickIntercepted
 }
