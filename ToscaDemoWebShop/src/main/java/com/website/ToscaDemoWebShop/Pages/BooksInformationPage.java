@@ -13,7 +13,7 @@ public class BooksInformationPage  {
 	
 	public void ClickOnAddToCartButton()
 	{
-	addToCartButton.click();
+		addToCartButton.click();
 	}
 	
 
