@@ -32,11 +32,29 @@ public class ShoppingCartPage {
 	    	Select sel = new Select(shippingCart_CountryId);
 	    	sel.selectByVisibleText(country);
 	    }
-	    
+	 
+	 /**
+	  * To select a State from the Dropdown
+	  * @author nagar
+	  * @param state Provide the State Value to be selected
+	  * @return void
+	  */
 	 public void selectState(String state)
 	    {
 	    	Select sel = new Select(shippingCart_StateProvinceId);
 	    	sel.selectByVisibleText(state);
+	    }
+	 
+	 /**
+	  * To select a State from the dropdown using index
+	  * @param stateIndex Provide the position of the value to be selected
+	  * @return void
+	  */
+	 public void selectState(int stateIndex)
+	    {
+	    	Select sel = new Select(shippingCart_StateProvinceId);
+	    	//select by Index
+	    	sel.selectByIndex(stateIndex);
 	    }
 	  public void selectCheckbox()
 	    {
