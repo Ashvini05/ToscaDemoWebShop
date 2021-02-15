@@ -11,7 +11,7 @@ public class ShoppingCartPage {
 	
   public ShoppingCartPage(WebDriver driver) {
 		 this.driver = driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver,  this);
 	 }
 	
 	@FindBy(id = "CountryId")
