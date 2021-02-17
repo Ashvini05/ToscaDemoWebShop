@@ -26,8 +26,6 @@ public class BookAddressCheckOutPages {
 	@FindBy(id="BillingNewAddress_Company")
 	private WebElement billingAddress_Company; 
 	
-	
-	
 	@FindBy(id = "BillingNewAddress_CountryId")
 	private WebElement billingAddress_CountryId;
 	
