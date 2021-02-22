@@ -63,47 +63,44 @@ private WebDriver driver;
    public void clickOnFilterByPriceUnder1000()
    {
 	   desktops_FilterByPriceunder1000.click();
-	   getFilterByprice();
+	   getFilterByprice("0", "1000");
    }
    
    public void clickOnFilterByPriceOver1200()
    {
 	   desktops_FilterByPriceunder1200.click();
-	   getFilterByprice();
+	   getFilterByprice("0", "1200");
    }
    
    public void clickOnFilterByPriceBetween1000_1200()
    {
 	   desktops_FilterByPriceBetween1000_1200.click();
-	   getFilterByprice();
+	   getFilterByprice("1000", "1200");
    }
    
-   public void getFilterByprice()
+   public void getFilterByprice(String min, String max)
    {
 	   for(WebElement element:filterByPriceList) {
 //		  to check price is under 1000
-		   for(WebElement pricefilter:priceRangeBetween)
+		   if((Float.parseFloat(min) <= Float.parseFloat(element.getText())) && (Float.parseFloat(max) >= Float.parseFloat(element.getText())))
 		   {
-			   if((Float.parseFloat(pricefilter.getText())<=Float.parseFloat(element.getText())) && (Float.parseFloat(pricefilter.getText())>=Float.parseFloat(element.getText())))
-			   {
-				   
-				   System.out.println("Price is between 1000 to 1200");
-			   }
-			   else if(Float.parseFloat(element.getText())<=Float.parseFloat(pricefilter.getText()))
-			   {
 			   
-				   System.out.println("Price is under "+pricefilter.getText());
-			   }
-			   
-//		   to check price is over 1000
-		   
-			   else if(Float.parseFloat(element.getText())>=Float.parseFloat(pricefilter.getText()))
-			   {
-				   
-				   System.out.println("Price is over "+pricefilter.getText());
-			   }
-		  
+			   System.out.println("Price is between"  + min + " and " + max);
 		   }
+		   else if(Float.parseFloat(element.getText())<=Float.parseFloat(min))
+		   {
+		   
+			   System.out.println("Price is under "+ min);
+		   }
+		   
+//		   to check price is over 1000
+	   
+		   else if(Float.parseFloat(element.getText())>=Float.parseFloat(max))
+		   {
+			   
+			   System.out.println("Price is over "+ max);
+		   }
+		  
 		   
 		   }	   
 
