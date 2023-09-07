@@ -7,17 +7,17 @@
   -->
   <test name="Book Order">
     <classes>
-      <class name="com.website.ToscaDemoWebShop.BookOrder" />
+      <class name="com.website.ToscaDemoWebShop.BookOrderTest" />
     </classes>
   </test>
   <test name="Register New User">
     <classes>
-      <class name="com.website.ToscaDemoWebShop.RegisterNewUser" />
+      <class name="com.website.ToscaDemoWebShop.RegisterNewUserTest" />
     </classes>
   </test>
   <test name="Login Failure">
     <classes>
-      <class name="com.website.ToscaDemoWebShop.Login" />
+      <class name="com.website.ToscaDemoWebShop.LoginTest" />
     </classes>
   </test>
 </suite>

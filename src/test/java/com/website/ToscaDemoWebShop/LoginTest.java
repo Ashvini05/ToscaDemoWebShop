@@ -9,17 +9,18 @@ import com.website.ToscaDemoWebShop.Base.TestData.LoginUserTestData;
 import com.website.ToscaDemoWebShop.Pages.LoginPage;
 
 
-public class Login extends TestBase {
+public class LoginTest extends TestBase {
 	private WebDriver driver;
 	LoginPage login;
 	private LoginUserTestData testDataLU = new LoginUserTestData();
 	private String loginErrorMessage ="Login was unsuccessful. Please correct the errors and try again.";
 
 	@Test
-	public void loginFaillure()
+	public void veryfyLoginFaillure()
 	{
-		login = home.clickLogInLink();
-		login.enterLoginDetails(testDataLU).clickOnLogInButton();
+		login = home.clickLogInLink()
+				.enterLoginDetails(testDataLU)
+				.clickOnLogInButton();
 		Assert.assertEquals(login.verifyLoginErrorMessage(), loginErrorMessage, "Error Messaged Changed or user is able to login successfully!!");
 	}
 

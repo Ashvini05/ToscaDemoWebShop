@@ -13,16 +13,15 @@ import com.website.ToscaDemoWebShop.Pages.BillingAddressCheckOutPage;
 import com.website.ToscaDemoWebShop.Pages.ConfirmOrderPage;
 
 
-public class BookOrder extends TestBase
+public class BookOrderTest extends TestBase
 
 {
-	ConfirmOrderPage confirmOrder;
-	BillingAddressTestData testDataBA = new BillingAddressTestData();
+	private ConfirmOrderPage confirmOrder;
+	private BillingAddressTestData testDataBA = new BillingAddressTestData();
 	private String orderSuccessMessage = "Your order has been successfully processed!";
-	private WebDriver driver;
-	
+		
 	@Test
-	public void Orderbooks()
+	public void verifyBookOrderSuccess()
 	{
 		confirmOrder = home.clickOnBookLink()
 				.selectComputingAndInternetBook()
@@ -39,8 +38,8 @@ public class BookOrder extends TestBase
 				.clickOnShippingMethodContinueButton()
 				.selectPaymentMethod()
 				.clikOnPaymentMethodContinueBtn()
-				.clickOnPaymentInformationContinueButton();
-		confirmOrder.clickOnConfirmButton();
+				.clickOnPaymentInformationContinueButton()
+				.clickOnConfirmButton();
 		Assert.assertEquals(confirmOrder.verifyOrderSuccessMessage(), orderSuccessMessage, "Orefer failed with error message");
 	}
 

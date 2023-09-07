@@ -22,10 +22,10 @@ public class ConfirmOrderPage {
 	 }
 	
 	
-	public CheckOutPage clickOnConfirmButton()
+	public ConfirmOrderPage clickOnConfirmButton()
 	{
 	    ConfirmOrder_ConfirmButton.click();
-	    return new CheckOutPage(driver);
+	    return this;
 
 	}
 	

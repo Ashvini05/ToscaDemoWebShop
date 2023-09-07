@@ -5,6 +5,7 @@ import java.util.Random;
 public class LoginUserTestData {
 
 	private String emailID = "ashvini.more3423@gmail.com";
+	
 	private String password = "Password123";
 	
 	public String getEmailID() {
