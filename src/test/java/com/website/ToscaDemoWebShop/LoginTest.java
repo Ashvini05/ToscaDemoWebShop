@@ -10,7 +10,6 @@ import com.website.ToscaDemoWebShop.Pages.LoginPage;
 
 
 public class LoginTest extends TestBase {
-	private WebDriver driver;
 	LoginPage login;
 	private LoginUserTestData testDataLU = new LoginUserTestData();
 	private String loginErrorMessage ="Login was unsuccessful. Please correct the errors and try again.";

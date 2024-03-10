@@ -12,7 +12,6 @@ import com.website.ToscaDemoWebShop.Pages.HomePage;
 import com.website.ToscaDemoWebShop.Pages.RegisterPage;
 
 public class RegisterNewUserTest extends TestBase{
-	private WebDriver driver;
 	RegisterPage register;
 	private RegisterUserTestData testBaseRU = new RegisterUserTestData();
 	private String successMessage = "Your registration completed";

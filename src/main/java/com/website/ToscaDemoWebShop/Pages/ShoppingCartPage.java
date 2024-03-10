@@ -33,13 +33,7 @@ public class ShoppingCartPage {
 	    	sel.selectByVisibleText(country);
 	    	return this;
 	    }
-	 
-	 /**
-	  * To select a State from the Dropdown
-	  * @author nagar
-	  * @param state Provide the State Value to be selected
-	  * @return void
-	  */
+	
 	 public ShoppingCartPage selectState(String state)
 	    {
 	    	Select sel = new Select(shippingCart_StateProvinceId);
@@ -62,6 +56,4 @@ public class ShoppingCartPage {
 	    	return new LoginPage(driver);
 	}
 
-	  //staleElement Exception - WebDriver Wait, refresh page, exception handling
-	  //ElementClickIntercepted
 }

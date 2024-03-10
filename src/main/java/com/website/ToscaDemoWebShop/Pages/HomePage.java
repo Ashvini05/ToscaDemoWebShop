@@ -11,9 +11,6 @@ import org.testng.Assert;
 public class HomePage {
 	private WebDriver driver;
 	
-	 	//private String registerLink="//div//a[text()='Register']";
-	//private String bookLink=  "//div [@class='header-menu']/ul[@class='top-menu']/li/a[@href='/books']";
-	//private String shoppingCartLink= "//a[@href='/cart']//span[@class='cart-label']";
 	
 	@FindBy( xpath = "//div//a[text()='Register']" )
 	private WebElement registerLink;

@@ -1,11 +1,6 @@
 
 <suite name="Tosca Demo WebShop">
- <!--  <parameter name="selenium.host" value="localhost" />
-  <parameter name="selenium.port" value="3737" />
-  <parameter name="selenium.browser" value="*firefox" />
-  <parameter name="selenium.url" value="https://demo.opensourcecms.com/wordpress/" />
-  -->
-  <test name="Book Order">
+   <test name="Book Order">
     <classes>
       <class name="com.website.ToscaDemoWebShop.BookOrderTest" />
     </classes>
